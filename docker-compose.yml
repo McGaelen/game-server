@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  [game-name]:
+    build: .
+    image: [game-name]
+    container_name: [game-name]
+    restart: unless-stopped
+    ports:
+      # Examples of port forwards.
+      # If you want to forward ports on both TCP and UDP, you have to specify 2 separate entries.
+      - "9001:9001/udp"
+      - "9001:9001/tcp"
+      # You can also specify port ranges.
+      - "2456-2457:2456-2457/udp"
+    env_file:
+      - .env
+    volumes:
+      # Save file directory
+      - ./save-data:[save-file-directory]
+
+      # Game install directory
+      - ./data:/data

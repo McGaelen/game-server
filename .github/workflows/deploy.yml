@@ -1,0 +1,19 @@
+name: Deploy [game-name]
+
+on:
+  workflow_dispatch:
+
+jobs: 
+  deploy-[game-name]:
+    runs-on: [github-actions-runner]
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build and Deploy
+      run: |
+        cp -r . [game-deploy-directory]
+        cd [game-deploy-directory]
+        docker-compose down
+        docker-compose build
+        docker-compose up -d
+        

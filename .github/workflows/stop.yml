@@ -1,0 +1,14 @@
+name: Stop [game-name]
+
+on:
+  workflow_dispatch:
+
+jobs: 
+  stop-[game-name]:
+    runs-on: [github-actions-runner]
+
+    steps:
+    - name: Stop [game-name]
+      run: |
+        cd [game-deploy-directory]
+        docker-compose stop
