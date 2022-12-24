@@ -1,5 +1,5 @@
 # Game Server Template
-This game server template is for running dedicated servers for games using Docker. It also uses Github Actions to start and stop the server.
+This game server template is for running Steam dedicated servers using Docker. It also uses Github Actions to start and stop the server.
 
 The image will always update the game to the latest version on launch. The installation is stored on a volume (`data` directory) so that it doesn't have to be downloaded every time the container starts. Therefore, if a new version of the game is released, you only need to restart the container to download the update. If save data is needed, it will be stored in the `save-data` volume.
 
